@@ -28,6 +28,6 @@ In brainstorming the architecture, we knew immediately that we desired a landing
 For styling, we decided to use implement flexbox via CSS to ensure that the app would dynamically resize per user screen sizes.  We adhered as much as possible to Material design principles as human factors and A/B testing within industry has demonstrated that Material design provides an familiar experience for the user.  The Material-UI React library provides a higher order component that helps maintain theming throughout the app. 
 </p>
 <p>
-By <i>"we"</i>, I'm referring to <a href="bogoodski2019.azurewebsites.net" taget-"_blank">ME</a> :)
+By <i>"we"</i>, I'm referring to <a href="bogoodski2019.azurewebsites.net" taget="_blank">ME</a> :)
 </p>
 
