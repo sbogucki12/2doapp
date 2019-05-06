@@ -2,6 +2,10 @@
   <img src="https://i.imgur.com/4hD49XN.jpg" alt="not another 2DO app logo" >
 </p>
 
+<h1><i>not just another</i> 2DO <i>app</i></h1>
+
+
+<h3>Background:</h3>
 
 <p>
 First, we received the directions from the client, which requested – more or less – a To Do app created as a Single Page Application. 
@@ -26,6 +30,9 @@ In brainstorming the architecture, we knew immediately that we desired a landing
 </p>
 <p>
 For styling, we decided to use implement flexbox via CSS to ensure that the app would dynamically resize per user screen sizes.  We adhered as much as possible to Material design principles as human factors and A/B testing within industry has demonstrated that Material design provides an familiar experience for the user.  The Material-UI React library provides a higher order component that helps maintain theming throughout the app. 
+</p>
+<p>
+Our first step in really building out the app was to set up the color theme.  The withStyles higher order component provided by the Material-UI library is helpful with this, and we used it to set our primary and secondary colors that will be consistent throughout the app. 
 </p>
 <p>
 By <i>"we"</i>, I'm referring to <a href="https://bogoodski2019.azurewebsites.net/" taget="_blank">ME</a> :)
