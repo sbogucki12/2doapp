@@ -1,0 +1,47 @@
+﻿@-webkit-keyframes fromRight {
+    from {
+        left: 100%;       
+    }
+
+    to {
+        left: 0%;
+    }
+}
+
+@-moz-keyframes fromRight {
+    from {
+        left: 100%;
+    }
+
+    to {
+        left: 0%;
+    }
+}
+
+@-o-keyframes fromRight {
+    from {
+        left: 100%;
+    }
+
+    to {
+        left: 0%;
+    }
+}
+
+@keyframes fromRight {
+    from {
+        left: 100%;
+    }
+
+    to {
+        left: 0%;
+    }
+}
+
+#logo {
+    position: relative;
+    -webkit-animation: fromRight 2s forwards; /* Safari 4+ */
+    -moz-animation: fromRight 2s forwards; /* Fx 5+ */
+    -o-animation: fromRight 2s forwards; /* Opera 12+ */
+    animation: fromRight 2s forwards; /* IE 10+, Fx 29+ */
+}

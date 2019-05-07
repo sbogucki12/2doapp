@@ -1,18 +1,17 @@
-import React, { Component } from 'react';
+import React  from 'react';
 import { Route } from 'react-router';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import Home from './components/Home';
+import Landing from './components/landing/Landing';
+import AppBarDesktop from './components/appBar/AppBarDesktop';
 
 const App = () => {
     return (
         <React.Fragment>
             <CssBaseline />
-            <Route exact path='/' component={Home} />
+            <AppBarDesktop/>
+            <Route exact path='/' component={Landing} />
         </React.Fragment>
     );
 }
 
 export default App; 
-    
-
-  

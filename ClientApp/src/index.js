@@ -17,25 +17,38 @@ const theme = createMuiTheme({
         "background": { "paper": "#fff", "default": "#fafafa" },
         "primary": {
             "light": "rgba(184, 233, 134, 1)",
-            "main": "rgba(118, 199, 29, 1)", "dark": "rgba(65, 117, 5, 1)",
+            "main": "rgba(118, 199, 29, 1)",
+            "dark": "rgba(65, 117, 5, 1)",
             "contrastText": "rgba(255, 255, 255, 1)"
         },
         "secondary": {
-            "light": "rgba(255, 251, 64, 1)", "main": "rgba(255, 194, 54, 1)",
-            "dark": "rgba(244, 205, 9, 1)", "contrastText": "#fff"
+            "light": "rgba(255, 251, 64, 1)",
+            "main": "rgba(252, 241, 118, 1)",
+            "dark": "rgba(244, 205, 9, 1)",
+            "contrastText": "#fff"
         },
-        "error": { "light": "#e57373", "main": "#f44336", "dark": "#d32f2f", "contrastText": "#fff" },
-        "text": { "primary": "rgba(0, 0, 0, 0.87)", "secondary": "rgba(0, 0, 0, 0.54)", "disabled": "rgba(0, 0, 0, 0.38)", "hint": "rgba(0, 0, 0, 0.38)" }
+        "error": {
+            "light": "#e57373",
+            "main": "#f44336",
+            "dark": "#d32f2f",
+            "contrastText": "#fff"
+        },
+        "text": {
+            "primary": "rgba(247, 170, 192, 1)",
+            "secondary": "rgba(0, 0, 0, 0.54)",
+            "disabled": "rgba(0, 0, 0, 0.38)",
+            "hint": "rgba(0, 0, 0, 0.38)"
+        }
     }
 }
 );
 
 ReactDOM.render(
-    <BrowserRouter basename={baseUrl}>
-        <MuiThemeProvider theme={theme}>
+    <MuiThemeProvider theme={theme}>
+        <BrowserRouter basename={baseUrl}>
             <App />
-            </MuiThemeProvider>
-  </BrowserRouter>,
+        </BrowserRouter>
+    </MuiThemeProvider>,
   rootElement);
 
 registerServiceWorker();
