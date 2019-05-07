@@ -14,7 +14,7 @@ const styles = {
         alignItems: 'center'
     },
     button: {
-        marginTop: '3%',
+        marginTop: '5vh',
     }
 };
 
