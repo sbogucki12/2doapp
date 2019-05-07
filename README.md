@@ -5,6 +5,10 @@
 <h1><i>not just another</i> 2DO <i>app</i></h1>
 
 <h3>Timeline:</h3>
+<p><b>Day Two:</b></p>
+<ul>
+	<li>Began work on the main list component</li>
+</ul>
 <p><b>Day One:</b></p>
 <ul>
 	<li>Set up version control via GitHub</li>
@@ -14,7 +18,7 @@
 	<li>Created landing page</li>
 </ul>
 <p align="center">
-  <img src="http://g.recordit.co/G94jSnXBjz.gif" alt="landing page" >
+  <img src="http://g.recordit.co/75WEcWLD38.gif" alt="Day Two" >
 </p>
 
 
@@ -51,6 +55,10 @@ Our first step in really building out the app was to set up the color theme.  Th
 The withStyles higher order component expects the use of CSS-in-JS for styling, including CSS as JavaScript objects passed as props, and CSS as JavaScipt objects used inline within the JSX.  For items that require animation, we use CSS stylesheets because the browser polyfils become difficult to read as string literals in the JavaScript. 
 </p>
 <p>We are using FlexBox for dynamic styling as well as 'vw' and 'vh' CSS units, so that font sizes adjust to window resizing.</p>
+<p>
+After completing the basic design of the landing page, we next tackled the primary business logic of the app – the actual To-Do list.  Depending on time availability, the To-Do list may have many or few features, so the main goal in the initial implementation of the business logic is to create arrays and functions that are easily extensible for future enhancements. 
+</p>
+
 <p>
 By <i>"we"</i>, I'm referring to <a href="https://bogoodski2019.azurewebsites.net/" taget="_blank">ME</a> :)
 </p>
