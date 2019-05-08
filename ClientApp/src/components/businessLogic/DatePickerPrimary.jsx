@@ -9,13 +9,13 @@ const styles = theme => ({
     },
     textField: {
         marginLeft: theme.spacing.unit,
-        marginRight: theme.spacing.unit,        
+        marginRight: theme.spacing.unit,
     },
 });
 
 function DatePickerPrimary(props) {
-    const { classes } = props;   
-    
+    const { classes } = props;
+
 
     return (
         <form className={classes.container} noValidate >
@@ -23,7 +23,7 @@ function DatePickerPrimary(props) {
                 id="datetime-local"
                 label="Deadline"
                 type="datetime-local"
-                
+
                 className={classes.textField}
                 InputLabelProps={{
                     shrink: true,

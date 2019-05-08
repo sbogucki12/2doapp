@@ -22,7 +22,8 @@ const styles = theme => ({
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center', 
+        marginTop: '20vh'
     },
     container: {
         display: 'flex',
@@ -46,18 +47,19 @@ class ToDoPrimaryUI extends React.Component {
             showList: false,
             toDos: [],
             toDoDescription: "",
-            toDoId: 0, 
-            toDoDate: undefined,            
+            toDoId: 0,
+            toDoDate: undefined,
+            checked: [0]
         }
     }
 
-    handleChange = name => event => {        
+    handleChange = name => event => {
         this.setState({
-            [name]: event.target.value            
+            [name]: event.target.value
         });
     };
 
-    handleDateChange = (date) => { 
+    handleDateChange = (date) => {
         console.log(date.target.value)
         let myDate = moment(date.target.value, 'YYYY-MM-DD hh:mm').toString();
         let slicedDate = myDate.slice(0, 21);
@@ -65,7 +67,7 @@ class ToDoPrimaryUI extends React.Component {
             toDoDate: slicedDate
         })
     }
-    
+
     handleSaveTitle = () => {
         this.setState({
             showTitleInput: false,
@@ -75,10 +77,33 @@ class ToDoPrimaryUI extends React.Component {
 
     handleSave2DoDescription = () => {
         this.setState(prevState => ({
-            toDos: [...prevState.toDos, { "id": prevState.toDoId++, "description": this.state.toDoDescription, "toDoDate": this.state.toDoDate }]            
+            toDos: [...prevState.toDos, { "id": prevState.toDoId++, "description": this.state.toDoDescription, "toDoDate": this.state.toDoDate }]
         }));
     }
-       
+
+    handleToggle = value => () => {
+        const { checked } = this.state;
+        const currentIndex = checked.indexOf(value);
+        const newChecked = [...checked];
+
+        if (currentIndex === -1) {
+            newChecked.push(value);
+        } else {
+            newChecked.splice(currentIndex, 1);
+        }
+
+        this.setState({
+            checked: newChecked,
+        });
+    };
+
+    handleRemove = name => {        
+        this.setState({
+            toDos: this.state.toDos.filter(el => el !== name)
+            })
+        };
+    
+
     render() {
         const { classes } = this.props;
         const showList = this.state.showList;
@@ -92,13 +117,17 @@ class ToDoPrimaryUI extends React.Component {
                         listName={this.state.listName}
                         showTitleInput={this.state.showTitleInput}
                     />
-                    {showList ? <ListPrimary
-                        listName={this.state.listName}
-                        toDos={this.state.toDos}
-                        toDoDate={this.state.toDoDate}
-                        handleChange={this.handleChange}
-                        handleDateChange={this.handleDateChange}
-                        handleSave2DoDescription={this.handleSave2DoDescription}
+                    {showList ?
+                        <ListPrimary
+                            listName={this.state.listName}
+                            toDos={this.state.toDos}
+                            toDoDate={this.state.toDoDate}
+                            checked={this.state.checked}
+                            handleChange={this.handleChange}
+                            handleDateChange={this.handleDateChange}
+                            handleSave2DoDescription={this.handleSave2DoDescription}
+                            handleToggle={this.handleToggle}
+                            handleRemove={this.handleRemove}
                     /> : null}
                 </Paper>
 
