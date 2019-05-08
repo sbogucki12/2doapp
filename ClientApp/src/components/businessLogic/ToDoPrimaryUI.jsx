@@ -65,7 +65,6 @@ class ToDoPrimaryUI extends React.Component {
             toDoDate: slicedDate
         })
     }
-
     
     handleSaveTitle = () => {
         this.setState({

@@ -8,6 +8,7 @@
 <p><b>Day Two:</b></p>
 <ul>
 	<li>Began work on the main list component</li>
+	<li>Added a date picker for saving deadlines</li>
 </ul>
 <p><b>Day One:</b></p>
 <ul>
@@ -20,6 +21,11 @@
 <p align="center">
   <img src="http://g.recordit.co/75WEcWLD38.gif" alt="Day Two" >
 </p>
+<p><i>Date Picker (this was a pain):</i></p>
+<p align="center">
+	<img src="http://g.recordit.co/M1zqawqeIa.gif" alt="Date Picker">
+</p>
+
 
 
 <h3>Background:</h3>

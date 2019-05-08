@@ -31,8 +31,7 @@ let buttonText = "Save 2Do";
 
 const Add2Do = props => {
     const { classes } = props;
-    const toDosLength = props.toDos.length;
-    console.log(props.toDoDescription)
+    const toDosLength = props.toDos.length;    
 
     if (toDosLength > 0) {
         buttonText = "Add Another 2D0"
