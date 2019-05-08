@@ -27,7 +27,7 @@ class ListPrimary extends React.Component {
         }
     }
 
-    handleShowAdd20 = () => {
+    handleShowAdd2Do = () => {
         this.setState({
             showAdd2Do: true,
             showButton: false
@@ -41,7 +41,7 @@ class ListPrimary extends React.Component {
         const showButton = this.state.showButton;
         let toDoList = "No 2Dos Yet";
         if (this.props.toDos.length > 0) {
-            toDoList = this.props.toDos.map(item => <li key={item.id}>{item.description}</li>)
+            toDoList = this.props.toDos.map(item => <li key={item.id}>{item.description} {item.toDoDate} </li>)
         }
 
         return (
@@ -56,9 +56,10 @@ class ListPrimary extends React.Component {
                     {toDoList}
                 </ol>
                 {showAdd2Do ? <Add2Do
-                    toDos={this.props.toDos}
+                    toDos={this.props.toDos} 
+                    toDoDate={this.props.toDoDate}
+                    handleDateChange={this.props.handleDateChange}
                     handleChange={this.props.handleChange}
-
                     handleSave2DoDescription={this.props.handleSave2DoDescription}
                 /> : null}
 
@@ -66,7 +67,7 @@ class ListPrimary extends React.Component {
                     variant="contained"
                     color="primary"
                     className={classes.button}
-                    onClick={this.handleShowAdd20}
+                    onClick={this.handleShowAdd2Do}                    
                 >
                     {`ADD 2DO`}
                 </Button> : null}
