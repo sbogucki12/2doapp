@@ -6,6 +6,7 @@ import AppBarDesktop from './components/appBar/AppBarDesktop';
 import ToDoPrimaryUI from './components/businessLogic/ToDoPrimaryUI';
 import DateFnsUtils from "@date-io/date-fns";
 import { MuiPickersUtilsProvider } from "material-ui-pickers";
+import SwitchPrimary from './components/switchPage/SwitchPrimary';
 
 const App = () => {
     return (
@@ -14,7 +15,8 @@ const App = () => {
                 <CssBaseline />
                 <AppBarDesktop />
                 <Route exact path='/' component={Landing} />
-                <Route exact path='/test' component={ToDoPrimaryUI} />
+                <Route exact path='/switch' component={SwitchPrimary} />
+                <Route exact path='/main' component={ToDoPrimaryUI} />
             </MuiPickersUtilsProvider>
         </React.Fragment>
     );

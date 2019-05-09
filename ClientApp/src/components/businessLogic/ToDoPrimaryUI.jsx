@@ -3,6 +3,8 @@ import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import ListTitleInput from './ListTitleInput';
 import ListPrimary from './ListPrimary';
+import Button from '@material-ui/core/Button';
+import { Link } from 'react-router-dom';
 import * as moment from 'moment';
 
 const styles = theme => ({
@@ -112,6 +114,17 @@ class ToDoPrimaryUI extends React.Component {
                             handleRemove={this.handleRemove}
                         /> : null}
                 </Paper>
+                <Button
+                    variant="outlined"
+                    color="primary"
+                    className={classes.button}
+                    style={{ color: '#000000' }}
+                    size="large"
+                    component={Link}
+                    to="/switch"
+                >
+                    {`Home`}
+                </Button>
             </div>
         );
     }

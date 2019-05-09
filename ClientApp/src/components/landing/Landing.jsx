@@ -65,7 +65,7 @@ const Landing = props => {
                 style={{ color: '#000000' }}
                 size="large"
                 component={Link}
-                to='/test'
+                to='/switch'
             >
                 {`Enter`}
             </Button>

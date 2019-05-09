@@ -2,6 +2,8 @@
   <img src="https://i.imgur.com/4hD49XN.jpg" alt="not another 2DO app logo" >
 </p>
 
+<a href="http://2do.azurewebsites.net/" target="_blank" rel="noreferrer nopener">Now Online!</a>
+
 <h1><i>not just another</i> 2DO <i>app</i></h1>
 
 <h3>Timeline:</h3>
@@ -33,7 +35,7 @@
 	<img src="http://g.recordit.co/xONEjQxxsw.gif" alt="Day Three">
 </p>
 <p>
-<i>That gif may be a bit much for gitHub.  If so, it can be viewed</i> <a href="http://g.recordit.co/xONEjQxxsw.gif" target="_blank">HERE</a>.
+<i>That gif may be a bit much for gitHub.  If so, it can be viewed</i> <a href="http://g.recordit.co/xONEjQxxsw.gif" target="_blank" rel="noreferrer noopener">HERE</a>.
 </p>
 
 <p align="center">
@@ -44,7 +46,11 @@
 	<img src="http://g.recordit.co/M1zqawqeIa.gif" alt="Date Picker">
 </p>
 
+<h3>Release Features: <i>Considerations</i></h3>
 
+<p>
+A future update to this app will allow users to save their 2Do lists. <i>Nerd talk:</i> Currently, lists are saved to the browser’s local storage via React’s state object.  In order to save lists more persistently – beyond one browser session, lists would be saved to the server, or to a cloud database.  Given the architecture of this app, the lists would be sent via an HTTP request to a .NET Core Web API controller where they would then be saved to either a SQL or noSQL database; via the appropriate ORM.
+</p>
 
 <h3>Background:</h3>
 
@@ -84,6 +90,6 @@ After completing the basic design of the landing page, we next tackled the prima
 </p>
 
 <p>
-By <i>"we"</i>, I'm referring to <a href="https://bogoodski2019.azurewebsites.net/" taget="_blank">ME</a> :)
+By <i>"we"</i>, I'm referring to <a href="https://bogoodski2019.azurewebsites.net/" target="_blank" rel="noreferrer noopener">ME</a> :)
 </p>
 
