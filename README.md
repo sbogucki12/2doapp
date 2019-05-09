@@ -5,8 +5,12 @@
 <h1><i>not just another</i> 2DO <i>app</i></h1>
 
 <h3>Timeline:</h3>
-<p><b>Day Three:</b></p>
 
+<p><b>Day Four:</b></p>
+<ul>
+	<li>Cleaned up the padding and margin to make mobile friendly</li>
+</ul>
+<p><b>Day Three:</b></p>
 <ul>
 	<li>Added more UI to the the primary ToDo list component</li>
 	<li>Implemented a completed ToDos list</li>
@@ -26,7 +30,14 @@
 	<li>Created landing page</li>
 </ul>
 <p align="center">
-	<img src="http://g.recordit.co/75WEcWLD38.gif" alt="Day Two" >
+	<img src="http://g.recordit.co/xONEjQxxsw.gif" alt="Day Three">
+</p>
+<p>
+<i>That gif may be a bit much for gitHub.  If so, it can be viewed</i> <a href="http://g.recordit.co/xONEjQxxsw.gif" target="_blank">HERE</a>.
+</p>
+
+<p align="center">
+	<img src="http://g.recordit.co/75WEcWLD38.gif" alt="Day Two">
 </p>
 <p><i>Date Picker (this was a pain):</i></p>
 <p align="center">

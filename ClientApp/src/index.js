@@ -49,6 +49,6 @@ ReactDOM.render(
             <App />
         </BrowserRouter>
     </MuiThemeProvider>,
-  rootElement);
+    rootElement);
 
 registerServiceWorker();

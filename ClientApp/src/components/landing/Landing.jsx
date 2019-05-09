@@ -25,7 +25,7 @@ const Landing = props => {
         <div className={classes.root}>
             <div style={{
                 fontFamily: `'Shadows Into Light Two', cursive`,
-                fontStyle: 'italic', color: 'rgba(252, 241, 118, 1)',
+                fontStyle: 'italic', color: 'rgba(236, 180, 85, 1)',
                 textShadow: '2px 2px rgba(118, 199, 29, 1)',
                 fontSize: '4vh'
             }}>
@@ -35,7 +35,7 @@ const Landing = props => {
                 <span style={{
                     fontFamily: `'Anton', sans-serif`,
                     fontSize: '25vh',
-                    color: 'rgba(252, 241, 118, 1)',
+                    color: 'rgba(236, 180, 85, 1)',
                     textShadow: '2px 2px #000000'
                 }}>
                     {`2`}
@@ -52,7 +52,7 @@ const Landing = props => {
             <div style={{
                 fontFamily: `'Shadows Into Light Two', cursive`,
                 fontStyle: 'italic',
-                color: 'rgba(252, 241, 118, 1)',
+                color: 'rgba(236, 180, 85, 1)',
                 textShadow: '2px 2px #000000',
                 fontSize: '4vh'
             }}>

@@ -28,19 +28,25 @@ const styles = theme => ({
         marginTop: '2%',
         marginBottom: '2%'
     },
-    progressBar: {
-        width: 200,
-        height: 15,
-        borderStyle: 'solid',
-        borderWidth: 2,
-        borderColor: '#000000',
-        borderRadius: 5
+    listPaper: {
+        paddingTop: theme.spacing.unit * 2,
+        paddingBottom: theme.spacing.unit * 2,
+        marginTop: '2%',
+        marginBottom: '2%',
+        paddingLeft: 0,
+        width: 280,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center'
     },
     button: {
         margin: theme.spacing.unit,
+    },
+    icon: {
+        paddingLeft: 1,
+        paddingRight: 1,
     }
 });
-
 
 class ListPrimary extends React.Component {
     constructor(props) {
@@ -48,7 +54,9 @@ class ListPrimary extends React.Component {
         this.state = {
             showAdd2Do: false,
             showButton: true,
-            completedList: []
+            completedList: [],
+            listItemBackground: null,
+            showCompletedList: true
         }
     }
 
@@ -60,10 +68,27 @@ class ListPrimary extends React.Component {
     }
 
     handleComplete = toDo => {
-        console.log(toDo)
+        if (this.state.showCompletedList !== true) {
+            this.setState({
+                showCompletedList: true
+            })
+        };
+
+        for (var i = 0; i < this.state.completedList.length; i++) {
+            if (this.state.completedList[i].description === toDo.description) {
+                return;
+            }
+        };
+
         this.setState(prevState => ({
             completedList: [...prevState.completedList, toDo]
         }))
+    }
+
+    handleHideCompletedList = () => {
+        this.setState({
+            showCompletedList: false
+        })
     }
 
     render() {
@@ -73,6 +98,7 @@ class ListPrimary extends React.Component {
         const showButton = this.state.showButton;
         const completedToDos = this.state.completedList;
         const toDos = this.props.toDos;
+
         let toDoList =
             <Typography variant="body1" color="secondary" style={{ fontSize: '2vw' }} gutterBottom>
                 {`No 2Dos Yet`}
@@ -80,36 +106,40 @@ class ListPrimary extends React.Component {
 
         if (toDos.length > 0) {
             toDoList =
-                <Paper className={classes.paperRoot} elevation={6}>
-                    <List>
+                <Paper className={classes.listPaper} elevation={6}>
+                    <List style={{ width: 250, paddingLeft: 0 }}>
                         {toDos.map(toDo => (
-                            <ListItem key={toDo.id} role={undefined} dense>
-                                <ListItemText primary={`Due: ${toDo.toDoDate}`} style={{ paddingRight: 2, margin: 0 }} />
-                                <Typography
+                            <ListItem key={toDo.id} role={undefined} dense style={{ 'backgroundColor': completedToDos.includes(toDo) ? 'rgba(177, 250, 200, 0.49)' : null, paddingLeft: 1 }} >
+                                <span style={{ width: '30%' }}><ListItemText primary={`Due: ${toDo.toDoDate}`} /></span>
+                                <span style={{ width: '50%' }}><Typography
                                     variant="caption"
                                     style={{
                                         overflowWrap: 'break-word',
-                                        maxWidth: 150,
-                                        paddingRight: '5%',
-                                        textAlign: 'center'
+                                        textAlign: 'center',
+                                        paddingLeft: 2
                                     }}
                                     gutterBottom
                                 >
                                     {toDo.description}
                                 </Typography>
-                                <IconButton onClick={() => this.handleComplete(toDo)}>
-                                    <CompleteIcon color="primary" />
-                                </IconButton>
-                                <ListItemSecondaryAction >
-                                    <IconButton aria-label="Delete ToDo" onClick={() => { this.props.handleRemove(toDo) }} >
-                                        <DeleteIcon color="secondary" />
+                                </span>
+                                <span style={{ width: '20%' }}>
+                                    <IconButton onClick={() => this.handleComplete(toDo)} className={classes.icon}>
+                                        <CompleteIcon color="primary" />
                                     </IconButton>
-                                </ListItemSecondaryAction>
+                                    <ListItemSecondaryAction >
+                                        <IconButton aria-label="Delete ToDo" onClick={() => { this.props.handleRemove(toDo) }} className={classes.icon} >
+                                            <DeleteIcon color="secondary" />
+                                        </IconButton>
+                                    </ListItemSecondaryAction>
+                                </span>
                             </ListItem>
                         ))}
                     </List>
                 </Paper>
         };
+
+        const showCompletedList = this.state.showCompletedList;
         let completedList = null;
         if (completedToDos.length > 0) {
             completedList =
@@ -120,11 +150,12 @@ class ListPrimary extends React.Component {
                     <Typography variant="h5" gutterBottom>
                         {`👏`}
                     </Typography>
-                    <List>
+                    <List style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', width: 250 }}>
                         {completedToDos.map(toDo => (
-                            <ListItem key={toDo.id} button dense>
+                            <ListItem key={toDo.id} button dense tyle={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', width: 250 }}>
                                 <Typography
                                     variant="caption"
+                                    align="center"
                                     style={{
                                         overflowWrap: 'break-word',
                                         maxWidth: 250,
@@ -138,8 +169,11 @@ class ListPrimary extends React.Component {
                             </ListItem>
                         ))}
                     </List>
-                </Paper>;
-        }
+                    <Button variant="outlined" color="primary" className={classes.button} onClick={this.handleHideCompletedList}>
+                        {`Hide Completed 2Dos`}
+                    </Button>
+                </Paper>
+        };
 
         return (
             <div className={classes.root}>
@@ -179,7 +213,7 @@ class ListPrimary extends React.Component {
                             {`ADD 2DO`}
                         </Button> : null}
                 </Paper>
-                {completedList}
+                {showCompletedList ? completedList : null}
             </div>
         )
     }

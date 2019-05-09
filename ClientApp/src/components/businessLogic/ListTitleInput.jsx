@@ -18,7 +18,7 @@ const styles = theme => ({
     textField: {
         marginLeft: theme.spacing.unit,
         marginRight: theme.spacing.unit,
-        width: 290
+        width: 280
     },
     button: {
         margin: theme.spacing.unit
@@ -26,7 +26,6 @@ const styles = theme => ({
 });
 
 const ListTitleInput = (props) => {
-
     const { classes } = props;
     const showTitleInput = props.showTitleInput;
 
