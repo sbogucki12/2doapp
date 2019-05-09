@@ -37,10 +37,10 @@ function AppBarDesktop(props) {
                         {`2DO`}
                     </Typography>
                     <div className={classes.buttonContainer}>
-                        <Button variant="outlined" color="secondary" className={classes.button} size="small">
+                        <Button variant="contained" color="secondary" style={{ color: '#FFFFFF' }} className={classes.button} size="small">
                             {`Guide`}
                         </Button>
-                        <Button variant="outlined" color="secondary" className={classes.button} size="small">
+                        <Button variant="contained" color="secondary" style={{ color: '#FFFFFF' }}className={classes.button} size="small">
                             {`Docs`}
                         </Button>
                     </div>

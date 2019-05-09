@@ -5,6 +5,13 @@
 <h1><i>not just another</i> 2DO <i>app</i></h1>
 
 <h3>Timeline:</h3>
+<p><b>Day Three:</b></p>
+
+<ul>
+	<li>Added more UI to the the primary ToDo list component</li>
+	<li>Implemented a completed ToDos list</li>
+</ul>
+
 <p><b>Day Two:</b></p>
 <ul>
 	<li>Began work on the main list component</li>
@@ -18,6 +25,9 @@
 	<li>Implemented theme</li>
 	<li>Created landing page</li>
 </ul>
+<p align="center">
+	<img src="http://g.recordit.co/75WEcWLD38.gif" alt="Day Two" >
+</p>
 <p align="center">
   <img src="http://g.recordit.co/75WEcWLD38.gif" alt="Day Two" >
 </p>

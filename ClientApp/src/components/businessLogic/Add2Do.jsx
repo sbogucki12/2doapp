@@ -42,13 +42,13 @@ const Add2Do = props => {
             <form className={classes.container} noValidate autoComplete="off" >
                 <TextField
                     id="outlined-name"
-                    label="2Do Description"
+                    label="What 2Do"
                     className={classes.textField}
                     value={props.toDoDescription}
                     onChange={props.handleChange('toDoDescription')}
                     margin="normal"
                     variant="outlined"
-                    helperText="Describe 2Do"
+                    helperText="Describe What 2Do"
                 />
             </form>
             <DatePickerPrimary handleDateChange={props.handleDateChange} toDoDate={props.toDoDate} />

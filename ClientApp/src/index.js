@@ -23,7 +23,7 @@ const theme = createMuiTheme({
         },
         "secondary": {
             "light": "rgba(255, 251, 64, 1)",
-            "main": "rgba(252, 241, 118, 1)",
+            "main": "rgba(236, 180, 85, 1)",
             "dark": "rgba(244, 205, 9, 1)",
             "contrastText": "#fff"
         },

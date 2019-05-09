@@ -22,8 +22,9 @@ const styles = theme => ({
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        justifyContent: 'center', 
-        marginTop: '20vh'
+        justifyContent: 'center',
+        marginTop: '20vh',
+        marginBottom: '2%'
     },
     container: {
         display: 'flex',
@@ -48,12 +49,12 @@ class ToDoPrimaryUI extends React.Component {
             toDos: [],
             toDoDescription: "",
             toDoId: 0,
-            toDoDate: undefined,
-            checked: [0]
+            toDoDate: undefined
         }
     }
 
     handleChange = name => event => {
+        event.preventDefault();
         this.setState({
             [name]: event.target.value
         });
@@ -81,28 +82,11 @@ class ToDoPrimaryUI extends React.Component {
         }));
     }
 
-    handleToggle = value => () => {
-        const { checked } = this.state;
-        const currentIndex = checked.indexOf(value);
-        const newChecked = [...checked];
-
-        if (currentIndex === -1) {
-            newChecked.push(value);
-        } else {
-            newChecked.splice(currentIndex, 1);
-        }
-
-        this.setState({
-            checked: newChecked,
-        });
-    };
-
-    handleRemove = name => {        
+    handleRemove = name => {
         this.setState({
             toDos: this.state.toDos.filter(el => el !== name)
-            })
-        };
-    
+        })
+    };
 
     render() {
         const { classes } = this.props;
@@ -122,15 +106,12 @@ class ToDoPrimaryUI extends React.Component {
                             listName={this.state.listName}
                             toDos={this.state.toDos}
                             toDoDate={this.state.toDoDate}
-                            checked={this.state.checked}
                             handleChange={this.handleChange}
                             handleDateChange={this.handleDateChange}
                             handleSave2DoDescription={this.handleSave2DoDescription}
-                            handleToggle={this.handleToggle}
                             handleRemove={this.handleRemove}
-                    /> : null}
+                        /> : null}
                 </Paper>
-
             </div>
         );
     }
