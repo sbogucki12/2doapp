@@ -28,9 +28,6 @@
 <p align="center">
 	<img src="http://g.recordit.co/75WEcWLD38.gif" alt="Day Two" >
 </p>
-<p align="center">
-  <img src="http://g.recordit.co/75WEcWLD38.gif" alt="Day Two" >
-</p>
 <p><i>Date Picker (this was a pain):</i></p>
 <p align="center">
 	<img src="http://g.recordit.co/M1zqawqeIa.gif" alt="Date Picker">
