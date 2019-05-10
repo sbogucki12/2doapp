@@ -12,6 +12,7 @@
 <ul>
 	<li>Cleaned up the padding and margin to make mobile friendly</li>
 	<li>Added button to share completed 2Dos to twitter</li>
+	<li>Implemented save to localStorage functionality</li>
 </ul>
 <p><b>Day Three:</b></p>
 <ul>
@@ -32,6 +33,16 @@
 	<li>Implemented theme</li>
 	<li>Created landing page</li>
 </ul>
+
+<p>
+	<i>Saving to localStorage:</i>
+</p>
+
+<p align="center">
+	<img src="http://g.recordit.co/3kcXDf1sQ4.gif" alt="saving to local storage">
+</p>
+
+
 <p align="center">
 	<img src="http://g.recordit.co/KhGw0Rm12G.gif" alt="twitter share buttons">
 </p>

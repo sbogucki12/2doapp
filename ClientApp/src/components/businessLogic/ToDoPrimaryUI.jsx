@@ -90,6 +90,13 @@ class ToDoPrimaryUI extends React.Component {
         })
     };
 
+    handleSavedList = () => {
+        const savedList = this.state.toDos;
+        const listName = this.state.listName;
+        localStorage.setItem("savedList", JSON.stringify(savedList));
+        localStorage.setItem("listName", listName);
+    }
+
     render() {
         const { classes } = this.props;
         const showList = this.state.showList;
@@ -112,6 +119,7 @@ class ToDoPrimaryUI extends React.Component {
                             handleDateChange={this.handleDateChange}
                             handleSave2DoDescription={this.handleSave2DoDescription}
                             handleRemove={this.handleRemove}
+                            handleSavedList={this.handleSavedList}
                         /> : null}
                 </Paper>
                 <Button

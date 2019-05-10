@@ -7,6 +7,7 @@ import ToDoPrimaryUI from './components/businessLogic/ToDoPrimaryUI';
 import DateFnsUtils from "@date-io/date-fns";
 import { MuiPickersUtilsProvider } from "material-ui-pickers";
 import SwitchPrimary from './components/switchPage/SwitchPrimary';
+import SavedList from './components/businessLogic/SavedList';
 
 const App = () => {
     return (
@@ -17,6 +18,7 @@ const App = () => {
                 <Route exact path='/' component={Landing} />
                 <Route exact path='/switch' component={SwitchPrimary} />
                 <Route exact path='/main' component={ToDoPrimaryUI} />
+                <Route exact path='/savedlist' render={(props) => <SavedList {...props} />} />
             </MuiPickersUtilsProvider>
         </React.Fragment>
     );

@@ -7,6 +7,7 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
+import SavedList from '../businessLogic/SavedList';
 
 
 const styles = theme => ({
@@ -26,6 +27,7 @@ const styles = theme => ({
 class SwitchPrimary extends React.Component {
     state = {
         open: false,
+        disabled: false
     };
 
     handleClickOpen = () => {
@@ -36,8 +38,18 @@ class SwitchPrimary extends React.Component {
         this.setState({ open: false });
     };
 
+    componentDidMount() {
+        const savedList = JSON.parse(localStorage.getItem("savedList"));
+        if (savedList === null || savedList === undefined) {
+            this.setState({
+                disabled: true
+            })
+        };
+    }
+
     render() {
         const { classes } = this.props;
+        const disabled = this.state.disabled
         return (
             <div className={classes.root}>
                 <Button
@@ -57,9 +69,11 @@ class SwitchPrimary extends React.Component {
                     className={classes.button}
                     style={{ color: '#000000', width: 140 }}
                     size="large"
-                    onClick={this.handleClickOpen}
+                    component={Link}
+                    to='/savedlist'
+                    disabled={disabled}
                 >
-                    {`Open Saved`}
+                    {`Saved List`}
                 </Button>
                 <Dialog
                     open={this.state.open}
@@ -71,19 +85,19 @@ class SwitchPrimary extends React.Component {
                     <DialogContent>
                         <DialogContentText id="alert-dialog-description">
                             {`Please see official DOCS for considerations regarding release features, and future enhancements.`}
-                    </DialogContentText>
+                        </DialogContentText>
                     </DialogContent>
                     <DialogActions>
                         <a href="https://github.com/sbogucki12/2doapp" target="_blank" rel="noreferrer noopener" style={{ textDecoration: 'none' }}>
-                        <Button onClick={this.handleClose} color="primary">
-                            {`DOCS`}
-                        </Button> 
+                            <Button onClick={this.handleClose} color="primary">
+                                {`DOCS`}
+                            </Button>
                         </a>
                     </DialogActions>
                 </Dialog>
             </div>
         );
-    }    
+    }
 }
 
 export default withStyles(styles)(SwitchPrimary);
