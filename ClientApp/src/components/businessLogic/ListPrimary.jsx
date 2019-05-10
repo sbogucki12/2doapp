@@ -160,29 +160,27 @@ class ListPrimary extends React.Component {
                     <Typography variant="h5" gutterBottom>
                         {`👏`}
                     </Typography>
-                    <List style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', width: 250 }}>
+                    <List style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', width: '100%' }}>
                         {completedToDos.map(toDo => (
-                            <ListItem key={toDo.id} button dense tyle={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', width: 250 }}>
+                            <ListItem key={toDo.id} button dense tyle={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column' }}>
                                 <Typography
                                     variant="caption"
                                     align="center"
                                     style={{
                                         overflowWrap: 'break-word',
-                                        width: 200,
                                         textAlign: 'center',
-                                        fontSize: '2vw'
+                                        fontSize: '2vw',
+                                        width: '90%'
                                     }}
                                     gutterBottom
                                 >
                                     {toDo.description}
                                 </Typography>
-                                <ListItemSecondaryAction style={{ width: 25 }}>
+                                <ListItemSecondaryAction style={{ width: '10%' }}>
                                     <TwitterShareButton title={"Just Completed: " + `${toDo.description}`} url="http://2do.azurewebsites.net/">
                                         <TwitterIcon size={15} round />
                                     </TwitterShareButton>
-
                                 </ListItemSecondaryAction>
-
                             </ListItem>
                         ))}
                     </List>
