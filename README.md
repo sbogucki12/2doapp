@@ -11,6 +11,7 @@
 <p><b>Day Four:</b></p>
 <ul>
 	<li>Cleaned up the padding and margin to make mobile friendly</li>
+	<li>Added button to share completed 2Dos to twitter</li>
 </ul>
 <p><b>Day Three:</b></p>
 <ul>
@@ -31,6 +32,10 @@
 	<li>Implemented theme</li>
 	<li>Created landing page</li>
 </ul>
+<p align="center">
+	<img src="http://g.recordit.co/KhGw0Rm12G.gif" alt="twitter share buttons">
+</p>
+
 <p align="center">
 	<img src="http://g.recordit.co/xONEjQxxsw.gif" alt="Day Three">
 </p>

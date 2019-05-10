@@ -11,6 +11,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/RemoveCircleTwoTone';
 import CompleteIcon from '@material-ui/icons/CheckCircle';
+import { TwitterShareButton, TwitterIcon } from 'react-share';
 
 const styles = theme => ({
     root: {
@@ -158,7 +159,7 @@ class ListPrimary extends React.Component {
                                     align="center"
                                     style={{
                                         overflowWrap: 'break-word',
-                                        maxWidth: 250,
+                                        width: 200,
                                         textAlign: 'center',
                                         fontSize: '2vw'
                                     }}
@@ -166,6 +167,13 @@ class ListPrimary extends React.Component {
                                 >
                                     {toDo.description}
                                 </Typography>
+                                <ListItemSecondaryAction style={{ width: 25 }}>
+                                    <TwitterShareButton title={"Just Completed: " + `${toDo.description}`} url="http://2do.azurewebsites.net/">
+                                        <TwitterIcon size={15} round />
+                                    </TwitterShareButton>
+
+                                </ListItemSecondaryAction>
+
                             </ListItem>
                         ))}
                     </List>
