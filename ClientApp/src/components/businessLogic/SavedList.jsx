@@ -13,6 +13,11 @@ import DeleteIcon from '@material-ui/icons/RemoveCircleTwoTone';
 import CompleteIcon from '@material-ui/icons/CheckCircle';
 import { TwitterShareButton, TwitterIcon } from 'react-share';
 import { Link } from 'react-router-dom';
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
 import * as moment from 'moment';
 
 const styles = theme => ({
@@ -70,7 +75,8 @@ class SavedList extends React.Component {
             savedToDoList: [],
             toDoDescription: "",
             toDoDate: undefined,
-            listName: ""
+            listName: "",
+            open: false,
         }
     }
 
@@ -79,7 +85,7 @@ class SavedList extends React.Component {
             showAdd2Do: true,
             showButton: false
         })
-    }
+    };
 
     handleComplete = toDo => {
         if (this.state.showCompletedList !== true) {
@@ -97,13 +103,13 @@ class SavedList extends React.Component {
         this.setState(prevState => ({
             completedList: [...prevState.completedList, toDo]
         }))
-    }
+    };
 
     handleHideCompletedList = () => {
         this.setState({
             showCompletedList: false
         })
-    }
+    };
 
     handleChange = name => event => {
         event.preventDefault();
@@ -116,7 +122,7 @@ class SavedList extends React.Component {
         this.setState(prevState => ({
             savedToDoList: [...prevState.savedToDoList, { "id": prevState.toDoId++, "description": this.state.toDoDescription, "toDoDate": this.state.toDoDate }]
         }));
-    }
+    };
 
     handleRemove = name => {
         this.setState({
@@ -131,14 +137,21 @@ class SavedList extends React.Component {
         this.setState({
             toDoDate: slicedDate
         })
-    }
+    };
 
     handleSavedList = () => {
         const savedList = this.state.savedToDoList;
         const listName = this.state.listName;
         localStorage.setItem("savedList", JSON.stringify(savedList));
         localStorage.setItem("listName", listName);
-    }
+        this.setState({
+            open: true
+        })
+    };
+
+    handleClose = () => {
+        this.setState({ open: false });
+    };
 
     componentDidMount() {
         const savedList = JSON.parse(localStorage.getItem("savedList"));
@@ -295,6 +308,24 @@ class SavedList extends React.Component {
                 >
                     {`Home`}
                 </Button>
+                <Dialog
+                    open={this.state.open}
+                    onClose={this.handleClose}
+                    aria-labelledby="alert-dialog-title"
+                    aria-describedby="alert-dialog-description"
+                >
+                    <DialogTitle id="alert-dialog-title">{`List Saved`}</DialogTitle>
+                    <DialogContent>
+                        <DialogContentText id="alert-dialog-description">
+                            {`${listName} saved to local storage.`}
+                        </DialogContentText>
+                    </DialogContent>
+                    <DialogActions>
+                        <Button onClick={this.handleClose} color="primary">
+                            {`Ok`}
+                        </Button>
+                    </DialogActions>
+                </Dialog>
             </div>
         )
     }

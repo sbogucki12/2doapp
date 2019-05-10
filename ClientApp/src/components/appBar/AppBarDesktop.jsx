@@ -14,7 +14,7 @@ const styles = theme => ({
         flexGrow: 1,
     },
     buttonContainer: {
-        display: 'flex', 
+        display: 'flex',
         flexDirection: 'row'
     },
     button: {
@@ -37,19 +37,17 @@ function AppBarDesktop(props) {
                         {`2DO`}
                     </Typography>
                     <div className={classes.buttonContainer}>
-                        <a href="https://github.com/sbogucki12/2doapp" target="_blank" rel="noreferrer noopener" style={{ textDecoration: 'none' }}>                        
-                        <Button variant="contained" color="secondary" style={{ color: '#FFFFFF', width: 90 }} className={classes.button} size="small">
-                            {`Docs`}
+                        <a href="https://github.com/sbogucki12/2doapp" target="_blank" rel="noreferrer noopener" style={{ textDecoration: 'none' }}>
+                            <Button variant="contained" color="secondary" style={{ color: '#FFFFFF', width: 90 }} className={classes.button} size="small">
+                                {`Docs`}
                             </Button>
                         </a>
                         <a href="https://bogoodski2019.azurewebsites.net/" target="_blank" rel="noreferrer noopener" style={{ textDecoration: 'none' }}>
-                        <Button variant="contained" color="secondary" style={{ color: '#FFFFFF', width: 90 }} className={classes.button} size="small">
-                            {`BoGoodSki`}
-                        </Button>
+                            <Button variant="contained" color="secondary" style={{ color: '#FFFFFF', width: 90 }} className={classes.button} size="small">
+                                {`BoGoodSki`}
+                            </Button>
                         </a>
-
                     </div>
-
                 </Toolbar>
             </AppBar>
         </div>

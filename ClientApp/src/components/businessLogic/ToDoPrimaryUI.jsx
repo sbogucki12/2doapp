@@ -5,6 +5,11 @@ import ListTitleInput from './ListTitleInput';
 import ListPrimary from './ListPrimary';
 import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom';
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
 import * as moment from 'moment';
 
 const styles = theme => ({
@@ -51,7 +56,8 @@ class ToDoPrimaryUI extends React.Component {
             toDos: [],
             toDoDescription: "",
             toDoId: 0,
-            toDoDate: undefined
+            toDoDate: undefined,
+            open: false,
         }
     }
 
@@ -69,20 +75,20 @@ class ToDoPrimaryUI extends React.Component {
         this.setState({
             toDoDate: slicedDate
         })
-    }
+    };
 
     handleSaveTitle = () => {
         this.setState({
             showTitleInput: false,
             showList: true
         })
-    }
+    };
 
     handleSave2DoDescription = () => {
         this.setState(prevState => ({
             toDos: [...prevState.toDos, { "id": prevState.toDoId++, "description": this.state.toDoDescription, "toDoDate": this.state.toDoDate }]
         }));
-    }
+    };
 
     handleRemove = name => {
         this.setState({
@@ -95,11 +101,19 @@ class ToDoPrimaryUI extends React.Component {
         const listName = this.state.listName;
         localStorage.setItem("savedList", JSON.stringify(savedList));
         localStorage.setItem("listName", listName);
-    }
+        this.setState({
+            open: true
+        })
+    };
+
+    handleClose = () => {
+        this.setState({ open: false });
+    };
 
     render() {
         const { classes } = this.props;
         const showList = this.state.showList;
+        const listName = this.state.listName;
 
         return (
             <div className={classes.root}>
@@ -133,6 +147,24 @@ class ToDoPrimaryUI extends React.Component {
                 >
                     {`Home`}
                 </Button>
+                <Dialog
+                    open={this.state.open}
+                    onClose={this.handleClose}
+                    aria-labelledby="alert-dialog-title"
+                    aria-describedby="alert-dialog-description"
+                >
+                    <DialogTitle id="alert-dialog-title">{`List Saved`}</DialogTitle>
+                    <DialogContent>
+                        <DialogContentText id="alert-dialog-description">
+                            {`${listName} saved to local storage.`}
+                        </DialogContentText>
+                    </DialogContent>
+                    <DialogActions>
+                            <Button onClick={this.handleClose} color="primary">
+                                {`Ok`}
+                            </Button>
+                    </DialogActions>
+                </Dialog>
             </div>
         );
     }

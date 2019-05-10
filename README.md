@@ -8,6 +8,12 @@
 
 <h3>Timeline:</h3>
 
+<p><b>Day Five:</b></p>
+<ul>
+	<li>Added dialogs to confirm list has saved</li>
+	<li>Added text to switch to explain why button is initially disabled (no saved list)</li>
+</ul>
+
 <p><b>Day Four:</b></p>
 <ul>
 	<li>Cleaned up the padding and margin to make mobile friendly</li>
@@ -69,7 +75,7 @@
 <h3>Release Features: <i>Considerations</i></h3>
 
 <p>
-A future update to this app will allow users to save their 2Do lists. <i>Nerd talk:</i> Currently, lists are saved to the browser’s local storage via React’s state object.  In order to save lists more persistently – beyond one browser session, lists would be saved to the server, or to a cloud database.  Given the architecture of this app, the lists would be sent via an HTTP request to a .NET Core Web API controller where they would then be saved to either a SQL or noSQL database; via the appropriate ORM.
+A future update to this app will allow users to save their 2Do lists permanently. <i>Nerd talk:</i> Currently, lists are saved initially to React's state object, and then to the browser’s local storage.  In order to save lists more persistently – (currently, saved lists would be lost if user clears their browser's local storage) - lists would be saved to the server, or to a cloud database.  Given the architecture of this app, the lists would be sent via an HTTP request to a .NET Core Web API controller where they would then be saved to either a SQL or noSQL database; via the appropriate ORM.
 </p>
 
 <h3>Background:</h3>

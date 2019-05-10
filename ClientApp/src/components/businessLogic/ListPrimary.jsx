@@ -72,7 +72,7 @@ class ListPrimary extends React.Component {
             showAdd2Do: true,
             showButton: false
         })
-    }
+    };
 
     handleComplete = toDo => {
         if (this.state.showCompletedList !== true) {
@@ -90,13 +90,13 @@ class ListPrimary extends React.Component {
         this.setState(prevState => ({
             completedList: [...prevState.completedList, toDo]
         }))
-    }
+    };
 
     handleHideCompletedList = () => {
         this.setState({
             showCompletedList: false
         })
-    }
+    };
 
     render() {
         const { classes } = this.props;

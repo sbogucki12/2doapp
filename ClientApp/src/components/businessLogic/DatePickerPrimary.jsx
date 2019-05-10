@@ -16,7 +16,6 @@ const styles = theme => ({
 function DatePickerPrimary(props) {
     const { classes } = props;
 
-
     return (
         <form className={classes.container} noValidate >
             <TextField

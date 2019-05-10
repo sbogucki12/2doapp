@@ -1,6 +1,5 @@
 ﻿import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import DatePickerPrimary from './DatePickerPrimary';
@@ -52,7 +51,7 @@ const Add2Do = props => {
                 />
             </form>
             <DatePickerPrimary handleDateChange={props.handleDateChange} toDoDate={props.toDoDate} />
-            <Button variant="outlined" color="primary" className={classes.button} onClick={props.handleSave2DoDescription} >
+            <Button variant="outlined" color="primary" className={classes.button} onClick={e => props.handleSave2DoDescription(e)} >
                 {buttonText}
             </Button>
         </div>
