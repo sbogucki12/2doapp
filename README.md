@@ -42,6 +42,10 @@
 	<img src="http://g.recordit.co/3kcXDf1sQ4.gif" alt="saving to local storage">
 </p>
 
+<p>
+<i>That gif may be a bit much for gitHub.  If so, it can be viewed</i> <a href="http://g.recordit.co/3kcXDf1sQ4.gif" target="_blank" rel="noreferrer noopener">HERE</a>.
+</p>
+
 
 <p align="center">
 	<img src="http://g.recordit.co/KhGw0Rm12G.gif" alt="twitter share buttons">
